@@ -1,0 +1,432 @@
+{% extends "my_portfolio/base.html" %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content">
+                        <h1 class="display-4">Welcome to JinaboCV</h1>
+                        <p class="lead">Web & Mobile Developer | IT Consultant | Problem Solver</p>
+                        <div class="mt-4">
+                            <a href="#contact" class="btn btn-primary btn-lg me-3">Contact Me</a>
+                            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p>I am a seasoned software developer with over 3 years of experience in building enterprise-level applications. My expertise spans across full-stack development, with a focus on creating scalable and maintainable solutions. I am passionate about clean code, best practices, and IT consultancy </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section id="expertise" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Technical Expertise</h2>
+            <div class="row">
+                <!-- Frontend Skills -->
+                <div class="col-lg-4 mx-auto">
+                    
+                    <div class="skill-category mb-4">
+                        <h4 class="mb-3">Frontend Development</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>HTML5/CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>JavaScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend Skills -->
+                <div class="col-lg-4 mx-auto">
+                        <div class="skill-category mb-4">
+                            <h4 class="mb-3">Backend Development</h4>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Node.js</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Python</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>SQL</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- Tools & Others -->
+                <div class="col-lg-4 mx-auto"><div class="skill-category">
+                        <h4 class="mb-3">Tools & Others</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Git</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Docker</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>AWS</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Services</h2>
+            <div class="row">
+                <!-- Web Development -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom web applications built with modern technologies, focusing on performance, scalability, and user experience.</p>
+                        <ul class="service-features">
+                            <li>Responsive Design</li>
+                            <li>Progressive Web Apps</li>
+                            <li>E-commerce Solutions</li>
+                            <li>CMS Development</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
+                        <p>Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.</p>
+                        <ul class="service-features">
+                            <li>iOS Development</li>
+                            <li>Android Development</li>
+                            <li>React Native Apps</li>
+                            <li>Mobile UI/UX Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cloud Solutions -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable cloud infrastructure and deployment solutions using leading cloud providers.</p>
+                        <ul class="service-features">
+                            <li>AWS Architecture</li>
+                            <li>Azure Solutions</li>
+                            <li>DevOps Implementation</li>
+                            <li>Cloud Migration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- API Development -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>API Development</h3>
+                        <p>Robust and secure RESTful APIs and microservices architecture for seamless integration.</p>
+                        <ul class="service-features">
+                            <li>RESTful APIs</li>
+                            <li>GraphQL Services</li>
+                            <li>API Documentation</li>
+                            <li>Integration Services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Database Solutions -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database Solutions</h3>
+                        <p>Efficient database design, optimization, and management for optimal performance.</p>
+                        <ul class="service-features">
+                            <li>Database Design</li>
+                            <li>Performance Optimization</li>
+                            <li>Data Migration</li>
+                            <li>Security Implementation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Consulting -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Technical Consulting</h3>
+                        <p>Expert guidance on technology stack selection, architecture design, and development best practices.</p>
+                        <ul class="service-features">
+                            <li>Architecture Design</li>
+                            <li>Code Review</li>
+                            <li>Performance Audit</li>
+                            <li>Technical Training</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Resume</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <!-- Experience -->
+                    <div class="resume-section mb-5">
+                        <h3 class="section-title">
+                            <i class="fas fa-briefcase me-2"></i>Professional Experience
+                        </h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Web & Mobile Developer</h4>
+                                    <h5 class="company">JinaboCV Tech</h5>
+                                    <p class="date">January 2020 - Present</p>
+                                    <ul>
+                                        <li>Led development of enterprise-level applications serving 50,000+ users</li>
+                                        <li>Mentored junior developers and conducted code reviews</li>
+                                        <li>Implemented CI/CD pipelines reducing deployment time by 40%</li>
+                                        <li>Architected microservices infrastructure improving system scalability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Software Developer</h4>
+                                    <h5 class="company">Digital Innovations Ltd.</h5>
+                                    <p class="date">March 2017 - December 2019</p>
+                                    <ul>
+                                        <li>Developed full-stack web applications using React and Node.js</li>
+                                        <li>Optimized database queries improving application performance by 30%</li>
+                                        <li>Collaborated with UX designers to implement responsive interfaces</li>
+                                        <li>Integrated third-party APIs and payment gateways</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="resume-section mb-5">
+                        <h3 class="section-title">
+                            <i class="fas fa-graduation-cap me-2"></i>Education
+                        </h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Master of Science in Computer Science</h4>
+                                    <h5 class="company">Stanford University</h5>
+                                    <p class="date">2015 - 2017</p>
+                                    <p>Specialized in Software Engineering and Artificial Intelligence</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Bachelor of Science in Computer Science</h4>
+                                    <h5 class="company">MIT</h5>
+                                    <p class="date">2011 - 2015</p>
+                                    <p>Dean's List, Computer Science Department</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="resume-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-certificate me-2"></i>Certifications & Achievements
+                        </h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="certification-card">
+                                    <h5>AWS Certified Solutions Architect</h5>
+                                    <p class="text-muted">Amazon Web Services</p>
+                                    <p class="date">2022</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="certification-card">
+                                    <h5>Google Cloud Professional Developer</h5>
+                                    <p class="text-muted">Google Cloud</p>
+                                    <p class="date">2021</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="certification-card">
+                                    <h5>Microsoft Certified: Azure Developer Associate</h5>
+                                    <p class="text-muted">Microsoft</p>
+                                    <p class="date">2020</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="certification-card">
+                                    <h5>Best Developer Award</h5>
+                                    <p class="text-muted">Tech Solutions Inc.</p>
+                                    <p class="date">2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Download Resume Button -->
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-primary btn-lg">
+                            <i class="fas fa-download me-2"></i>Download Full Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Projects</h2>
+            <div class="row">
+                <!-- Project Card 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="static/my_portfolio/undraw_programming_65t2.png" class="card-img-top" alt="CRM System">
+                        <div class="card-body">
+                            <h5 class="card-title">Enterprise CRM System</h5>
+                            <p class="card-text">A comprehensive customer relationship management system built for a Fortune 500 company.</p>
+                            <a href="crm-project.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Platform</h5>
+                            <p class="card-text">A scalable e-commerce solution handling over 100,000 daily transactions, with integrated payment processing and inventory management.</p>
+                            <a href="#" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analytics Dashboard</h5>
+                            <p class="card-text">A real-time analytics platform providing insights into business metrics and performance indicators for executive decision-making.</p>
+                            <a href="#" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
