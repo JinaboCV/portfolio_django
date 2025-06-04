@@ -1,5 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.utils.text import slugify
+from .utils import calculate_read_time
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -25,6 +27,7 @@ class ServiceCategory(models.Model):
     
 class Service(models.Model):
     name = models.CharField(max_length=150)
+    category = models.ForeignKey(ServiceCategory, on_delete=models.RESTRICT, null=True, blank=True)
     
     def __str__(self):
         return self.name
@@ -56,4 +59,46 @@ class Achievements(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=150)
     description = RichTextField()
+    
+class BlogPostCategory(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+    description = models.CharField(max_length=255)
+    """ deleted_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True) """
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
+class BlogPost(models.Model):
+    category = models.ForeignKey(BlogPostCategory, on_delete=models.SET_NULL, null=True, blank= True)
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+    thumbnail = models.ImageField(upload_to='articles/thumbnails/', height_field=None, width_field=None, max_length=None)
+    content = RichTextField()
+    deleted_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+    
+    def read_time(self):
+        return calculate_read_time(self.content)
+    
+    
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
