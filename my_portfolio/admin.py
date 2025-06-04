@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Achievements, Experience, Project, Service, ServiceCategory, Skill, SkillCategory, Task 
+from .models import Achievements, Experience, Project, Service, ServiceCategory, Skill, SkillCategory, Task, BlogPostCategory, BlogPost, Subscriber 
 
 
     
@@ -26,6 +26,17 @@ class AdminTask(admin.ModelAdmin):
     
 class AdminProjects(admin.ModelAdmin):
     list_display = ['name']
+
+class AdminBlogPostCategory(admin.ModelAdmin):
+    list_display = ['title']
+
+class AdminBlogPost(admin.ModelAdmin):
+    list_display = ['title']
+    search_fields = ('title', 'category',)
+
+class AdminSubcriber(admin.ModelAdmin):
+    list_display = ['email']    
+    
     
 admin.site.register(SkillCategory, AdminSkillCategory)
 admin.site.register(Skill, AdminSkill)
@@ -35,3 +46,6 @@ admin.site.register(Experience, AdminExperience)
 admin.site.register(Achievements, AdminAchievements)
 admin.site.register(Task, AdminTask)
 admin.site.register(Project, AdminProjects)
+admin.site.register(BlogPostCategory, AdminBlogPostCategory)
+admin.site.register(BlogPost, AdminBlogPost)
+admin.site.register(Subscriber, AdminSubcriber)
