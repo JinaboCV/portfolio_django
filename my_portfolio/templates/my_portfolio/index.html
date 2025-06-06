@@ -41,100 +41,55 @@
                     
                     <div class="skill-category mb-4">
                         <h4 class="mb-3">Frontend Development</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>HTML5/CSS3</span>
-                                <span>95%</span>
+                        {% for skill in  backend_skills %}
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>{{skill.name}}</span>
+                                    <span>{{skill.percentage}}%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>React</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
+                        {% endfor %}       
                     </div>
                 </div>
-                <!-- Backend Skills -->
+                
                 <div class="col-lg-4 mx-auto">
-                        <div class="skill-category mb-4">
-                            <h4 class="mb-3">Backend Development</h4>
+                    <!-- Backend Skills -->
+                    <div class="skill-category mb-4">
+                        <h4 class="mb-3">Backend Development</h4>
+                        {% for skill in  backend_skills %}
                             <div class="skill-item mb-3">
                                 <div class="d-flex justify-content-between mb-1">
-                                    <span>Node.js</span>
-                                    <span>90%</span>
+                                    <span>{{skill.name}}</span>
+                                    <span>{{skill.percentage}}%</span>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>Python</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>SQL</span>
-                                    <span>88%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}       
+                    </div>
                 </div>
                 <!-- Tools & Others -->
-                <div class="col-lg-4 mx-auto"><div class="skill-category">
+                <div class="col-lg-4 mx-auto">
+                    <!-- Backend Skills -->
+                    <div class="skill-category mb-4">
                         <h4 class="mb-3">Tools & Others</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Git</span>
-                                <span>92%</span>
+                        {% for skill in  other_skills %}
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>{{skill.name}}</span>
+                                    <span>{{skill.percentage}}%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Docker</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>AWS</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div></div>
-            </div>
+                        {% endfor %}       
+                    </div>
+                </div>
         </div>
     </section>
 
