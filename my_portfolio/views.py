@@ -1,17 +1,19 @@
 from django.shortcuts import render
-from .models import SkillCategory, Skill, Service, Achievements, BlogPost, ServiceCategory
+from .models import SkillCategory, Skill, Service, Achievements, BlogPost, ServiceCategory, Experience, Task
 
 def index(request):
-    frontend_skills=    Skill.objects.filter(category__name = 'Frontend')
-    backend_skills=    Skill.objects.filter(category__name = 'Backend')
-    other_skills = Skill.objects.filter(category__name = 'Tool & Others') 
-    
+    skill_category = SkillCategory.objects.all()
+    skills = Skill.objects.all()
     service_category = ServiceCategory.objects.all()
+    
+    experiences = Experience.objects.all()
+    tasks = Task.objects.all()
     context = {
-        'frontend_skills': frontend_skills,
-        'backend_skills': backend_skills,
-        'other_skills': other_skills,
-        'service_category' : service_category
+        'skill_category': skill_category,
+        'skills': skills,
+        'service_category' : service_category,
+        'experiences': experiences,
+        'tasks': tasks
         }
     return render(request, 'my_portfolio/index.html', context=context)
 

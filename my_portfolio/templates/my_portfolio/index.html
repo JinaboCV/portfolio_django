@@ -36,60 +36,30 @@
         <div class="container">
             <h2 class="text-center mb-5">Technical Expertise</h2>
             <div class="row">
-                <!-- Frontend Skills -->
-                <div class="col-lg-4 mx-auto">
-                    
-                    <div class="skill-category mb-4">
-                        <h4 class="mb-3">Frontend Development</h4>
-                        {% for skill in  backend_skills %}
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>{{skill.name}}</span>
-                                    <span>{{skill.percentage}}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        {% endfor %}       
+                {% for category in skill_category %}
+                    <div class="col-lg-4 mx-auto">                     
+                        <div class="skill-category mb-4">
+                            <h4 class="mb-3"> {{category.name}} </h4>
+                            {% for skill in skills %}
+                                {% if skill.category.id == category.id %}
+                                    <div class="skill-item mb-3">
+                                        <div class="d-flex justify-content-between mb-1">
+                                            <span>{{skill.name}}</span>
+                                            <span>{{skill.percentage}}%</span>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div> 
+                                {% endif %}
+                                 
+                            {% endfor %}                           
+                                                          
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
                 
-                <div class="col-lg-4 mx-auto">
-                    <!-- Backend Skills -->
-                    <div class="skill-category mb-4">
-                        <h4 class="mb-3">Backend Development</h4>
-                        {% for skill in  backend_skills %}
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>{{skill.name}}</span>
-                                    <span>{{skill.percentage}}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        {% endfor %}       
-                    </div>
-                </div>
-                <!-- Tools & Others -->
-                <div class="col-lg-4 mx-auto">
-                    <!-- Backend Skills -->
-                    <div class="skill-category mb-4">
-                        <h4 class="mb-3">Tools & Others</h4>
-                        {% for skill in  other_skills %}
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between mb-1">
-                                    <span>{{skill.name}}</span>
-                                    <span>{{skill.percentage}}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        {% endfor %}       
-                    </div>
-                </div>
+
         </div>
     </section>
 
@@ -127,107 +97,39 @@
                             <i class="fas fa-briefcase me-2"></i>Professional Experience
                         </h3>
                         <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Web & Mobile Developer</h4>
-                                    <h5 class="company">JinaboCV Tech</h5>
-                                    <p class="date">January 2020 - Present</p>
-                                    <ul>
-                                        <li>Led development of enterprise-level applications serving 50,000+ users</li>
-                                        <li>Mentored junior developers and conducted code reviews</li>
-                                        <li>Implemented CI/CD pipelines reducing deployment time by 40%</li>
-                                        <li>Architected microservices infrastructure improving system scalability</li>
-                                    </ul>
+                            {% for experience in experiences %}
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4> {{ experience.title }} </h4>
+                                        <h5 class="company"> {{experience.company}} </h5>
+                                        <p class="date"> {{experience.startedAt}} - {{experience.endAt}} </p>
+                                        <ul>
+                                            {% for task in tasks %}
+                                                {% if task.experience.id == experience.id %}
+                                                    <li> {{task.description}} </li>
+                                                
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Software Developer</h4>
-                                    <h5 class="company">Digital Innovations Ltd.</h5>
-                                    <p class="date">March 2017 - December 2019</p>
-                                    <ul>
-                                        <li>Developed full-stack web applications using React and Node.js</li>
-                                        <li>Optimized database queries improving application performance by 30%</li>
-                                        <li>Collaborated with UX designers to implement responsive interfaces</li>
-                                        <li>Integrated third-party APIs and payment gateways</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {% endfor %}
+                            
+                          
                         </div>
                     </div>
 
-                    <!-- Education -->
-                    <div class="resume-section mb-5">
-                        <h3 class="section-title">
-                            <i class="fas fa-graduation-cap me-2"></i>Education
-                        </h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Master of Science in Computer Science</h4>
-                                    <h5 class="company">Stanford University</h5>
-                                    <p class="date">2015 - 2017</p>
-                                    <p>Specialized in Software Engineering and Artificial Intelligence</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Bachelor of Science in Computer Science</h4>
-                                    <h5 class="company">MIT</h5>
-                                    <p class="date">2011 - 2015</p>
-                                    <p>Dean's List, Computer Science Department</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
-                    <!-- Certifications -->
-                    <div class="resume-section">
-                        <h3 class="section-title">
-                            <i class="fas fa-certificate me-2"></i>Certifications & Achievements
-                        </h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="certification-card">
-                                    <h5>AWS Certified Solutions Architect</h5>
-                                    <p class="text-muted">Amazon Web Services</p>
-                                    <p class="date">2022</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="certification-card">
-                                    <h5>Google Cloud Professional Developer</h5>
-                                    <p class="text-muted">Google Cloud</p>
-                                    <p class="date">2021</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="certification-card">
-                                    <h5>Microsoft Certified: Azure Developer Associate</h5>
-                                    <p class="text-muted">Microsoft</p>
-                                    <p class="date">2020</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="certification-card">
-                                    <h5>Best Developer Award</h5>
-                                    <p class="text-muted">Tech Solutions Inc.</p>
-                                    <p class="date">2021</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <
 
                     <!-- Download Resume Button -->
-                    <div class="text-center mt-5">
+                    {% comment %} <div class="text-center mt-5">
                         <a href="#" class="btn btn-primary btn-lg">
                             <i class="fas fa-download me-2"></i>Download Full Resume
                         </a>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
         </div>
