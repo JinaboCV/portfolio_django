@@ -99,106 +99,18 @@
             <h2 class="text-center mb-5">Services</h2>
             <div class="row">
                 <!-- Web Development -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Custom web applications built with modern technologies, focusing on performance, scalability, and user experience.</p>
-                        <ul class="service-features">
-                            <li>Responsive Design</li>
-                            <li>Progressive Web Apps</li>
-                            <li>E-commerce Solutions</li>
-                            <li>CMS Development</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Mobile Development -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile Development</h3>
-                        <p>Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.</p>
-                        <ul class="service-features">
-                            <li>iOS Development</li>
-                            <li>Android Development</li>
-                            <li>React Native Apps</li>
-                            <li>Mobile UI/UX Design</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Cloud Solutions -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud Solutions</h3>
-                        <p>Scalable cloud infrastructure and deployment solutions using leading cloud providers.</p>
-                        <ul class="service-features">
-                            <li>AWS Architecture</li>
-                            <li>Azure Solutions</li>
-                            <li>DevOps Implementation</li>
-                            <li>Cloud Migration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- API Development -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h3>API Development</h3>
-                        <p>Robust and secure RESTful APIs and microservices architecture for seamless integration.</p>
-                        <ul class="service-features">
-                            <li>RESTful APIs</li>
-                            <li>GraphQL Services</li>
-                            <li>API Documentation</li>
-                            <li>Integration Services</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Database Solutions -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Database Solutions</h3>
-                        <p>Efficient database design, optimization, and management for optimal performance.</p>
-                        <ul class="service-features">
-                            <li>Database Design</li>
-                            <li>Performance Optimization</li>
-                            <li>Data Migration</li>
-                            <li>Security Implementation</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Consulting -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Technical Consulting</h3>
-                        <p>Expert guidance on technology stack selection, architecture design, and development best practices.</p>
-                        <ul class="service-features">
-                            <li>Architecture Design</li>
-                            <li>Code Review</li>
-                            <li>Performance Audit</li>
-                            <li>Technical Training</li>
-                        </ul>
-                    </div>
-                </div>
+                 {% for category in service_category %}
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="{{category.icon}}"></i>
+                                </div>
+                                <h3>{{category.name}}</h3>
+                                <p>{{category.description}}</p>
+                                </div>
+                            </div>
+                 {% endfor %}
+                
             </div>
         </div>
     </section>
