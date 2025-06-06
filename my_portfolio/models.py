@@ -11,7 +11,7 @@ class SkillCategory(models.Model):
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
-    percentage = models.CharField(max_length=3)
+    percentage = models.IntegerField()
     category = models.ForeignKey(SkillCategory, on_delete=models.RESTRICT)
     
     def __str__(self):
