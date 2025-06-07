@@ -55,9 +55,15 @@ class Achievements(models.Model):
     
     def __str__(self):
         return self.title_archieved + ' ' + self.year
-    
+
+class Status(models.TextChoices):
+    PENDING = 'PEN', 'Pending'
+    LINK = 'LIN', 'Link'
+    HOLD = 'HLD', 'Holding'
+        
 class Project(models.Model):
     name = models.CharField(max_length=150)
     description = RichTextField()
+    status = models.CharField(max_length=3, choices=Status.choices, default=Status.PENDING)
     
     

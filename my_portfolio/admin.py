@@ -25,9 +25,7 @@ class AdminTask(admin.ModelAdmin):
     list_display = ['description']
     
 class AdminProjects(admin.ModelAdmin):
-    list_display = ['name']
-
-   
+    list_display = ('name', 'get_status_display')
     
     
 admin.site.register(SkillCategory, AdminSkillCategory)
