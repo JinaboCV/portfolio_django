@@ -77,6 +77,14 @@
                                 </div>
                                 <h3>{{category.name}}</h3>
                                 <p>{{category.description}}</p>
+                                <ul class="service-features">
+                                    {% for service in services %}
+                                        {% if service.category.id == category.id %}
+                                            <li> {{service.name}} </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                
                                 </div>
                             </div>
                  {% endfor %}
@@ -120,10 +128,6 @@
                         </div>
                     </div>
 
-                    
-
-                    <
-
                     <!-- Download Resume Button -->
                     {% comment %} <div class="text-center mt-5">
                         <a href="#" class="btn btn-primary btn-lg">
@@ -147,30 +151,10 @@
                         <div class="card-body">
                             <h5 class="card-title">Enterprise CRM System</h5>
                             <p class="card-text">A comprehensive customer relationship management system built for a Fortune 500 company.</p>
-                            <a href="crm-project.html" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
-                <!-- Project Card 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">E-commerce Platform</h5>
-                            <p class="card-text">A scalable e-commerce solution handling over 100,000 daily transactions, with integrated payment processing and inventory management.</p>
-                            <a href="#" class="btn btn-outline-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project Card 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Data Analytics Dashboard</h5>
-                            <p class="card-text">A real-time analytics platform providing insights into business metrics and performance indicators for executive decision-making.</p>
-                            <a href="#" class="btn btn-outline-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
