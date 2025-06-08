@@ -144,18 +144,30 @@
         <div class="container">
             <h2 class="text-center mb-4">Featured Projects</h2>
             <div class="row">
-                <!-- Project Card 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card project-card">
-                        <img src="static/my_portfolio/undraw_programming_65t2.png" class="card-img-top" alt="CRM System">
-                        <div class="card-body">
-                            <h5 class="card-title">Enterprise CRM System</h5>
-                            <p class="card-text">A comprehensive customer relationship management system built for a Fortune 500 company.</p>
-                            <p class="text-center"><span class="badge bg-danger text-light d-inline-flex align-items-center fs-6">
-                            <i class="far fa-circle-pause me-2"></i>on hold</span></a></p>           
+                {% for project in projects %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card project-card">
+                            {% if project.thumbnail %}
+                                <img src="{{project.thumbnail.url}}" class="card-img-top" alt="{{jinabo_rex_ndi}}">
+                            {% else %}
+                                <img src="static/my_portfolio/undraw_programming_65t2.png" class="card-img-top" alt="jinabo_rex_ndi">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title"> {{project.name}} </h5>
+                                <p class="card-text"> {{project.description|safe}} </p>
+                                {% if project.status == 'LIN' %}
+                                    <p class="text-center text-success"><i class="fa fa-link"></i> View project </p>  
+                                {% elif project.status == 'PEN' %}
+                                    <p class="text-center text-primary"><i class="far fa-circle-pause "> {{project.get_status_display}} </i> </p> 
+                                {% else %}
+                                    <p class="text-center text-danger"><i class="far fa-circle-pause "> On hold</i> </p> 
+                                {% endif %}
+                        
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
+                
                 
             </div>
         </div>
@@ -168,6 +180,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form id="contactForm">
+                        {% csrf_token %}
                         <div class="mb-3">
                             <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                         </div>
@@ -175,7 +188,7 @@
                             <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="email" placeholder="Your whatsapp number" required>
+                            <input type="text" class="form-control" name="whatsapp" placeholder="Your whatsapp number" required>
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control" rows="5" name='message' placeholder="Your Message" required></textarea>

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
-from .models import SkillCategory, Skill, Service, Achievements, ServiceCategory, Experience, Task, ContactMsg
+from .models import SkillCategory, Skill, Service, Achievements, ServiceCategory, Experience, Task, ContactMsg, Project
 
 def index(request):
     skill_category = SkillCategory.objects.all()
@@ -11,6 +11,7 @@ def index(request):
     services = Service.objects.all()
     experiences = Experience.objects.all()
     tasks = Task.objects.all()
+    projects = Project.objects.all()
     
     # sending and email
     if request.method == 'POST':
@@ -24,15 +25,20 @@ def index(request):
             ContactMsg.objects.create(name=name, email=email, whatsapp=whatsapp, message= message)
             
             #Sends mail the me 
-            full_msg = f"From: {name} <{email}>\n Whatsapp Numner: {whatsapp} \n\nMessage:\n{message}"
-            send_mail(
-                subject="Message From Portfolio",
-                message= full_msg,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list= ["jinabocv@gmail.com"]
-            )
-            messages.success(request, '👏👏👏 Thank you for reaching out !!!')
-            redirect('home')
+            full_msg = f"From: {name} <{email}>\n Whatsapp: {whatsapp}\n\nMessage:\n{message}"
+            try:
+                send_mail(
+                    subject="Message From Portfolio",
+                    message=full_msg,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=["jinabocv@gmail.com"]
+                )
+                messages.success(request, '👏👏👏 Thank you for reaching out !!!')
+            except Exception as e:
+                print("Email sending failed:", e)
+                messages.error(request, 'We received your message but email delivery failed.')
+
+            return redirect('home')
         else:
             messages.error(request, 'Please fill in all fields.')
     context = {
@@ -41,7 +47,8 @@ def index(request):
         'service_category' : service_category,
         'services': services,
         'experiences': experiences,
-        'tasks': tasks
+        'tasks': tasks,
+        'projects': projects
         }
     return render(request, 'my_portfolio/index.html', context=context)
 
