@@ -1,7 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.utils.text import slugify
-from .utils import calculate_read_time
+
 
 class SkillCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -64,6 +63,7 @@ class Status(models.TextChoices):
 class Project(models.Model):
     name = models.CharField(max_length=150)
     description = RichTextField()
+    thumbnail = models.ImageField(upload_to='uploads/', height_field=None, width_field=None, max_length=None, null=True, blank=True)
     status = models.CharField(max_length=3, choices=Status.choices, default=Status.PENDING)
     
 class ContactMsg(models.Model):
